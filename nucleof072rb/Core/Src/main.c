@@ -108,10 +108,11 @@ int main(void)
 	HAL_GPIO_WritePin(CS_GPIO_Port, CS_Pin, GPIO_PIN_SET);
 
 	adc = ((rx[1] & 0x03) << 8) | rx[2];
-	out = 3000 + (uint32_t)((3000.0 * adc) / 1023.0);
+	out = 3200 + (uint32_t)((3200.0 * adc) / 1023.0);
 	__HAL_TIM_SET_COMPARE(&htim1, TIM_CHANNEL_1, out);
 	HAL_Delay(10);
     /* USER CODE END WHILE */
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
